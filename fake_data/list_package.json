@@ -1,0 +1,20 @@
+{
+    "name": "fake_package",
+    "latest": {
+        "version": "0.0.2",
+        "archive_url": "https://.../archive.tar.gz",
+        "pubspec": {}
+    },
+    "versions": [
+        {
+            "version": "0.0.2",
+            "archive_url": "https://.../archive.tar.gz",
+            "pubspec": {}
+        },
+        {
+            "version": "0.0.1",
+            "archive_url": "https://.../archive.tar.gz",
+            "pubspec": {}
+        }
+    ]
+}
