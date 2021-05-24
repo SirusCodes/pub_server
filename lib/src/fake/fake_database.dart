@@ -1,11 +1,15 @@
 import 'dart:io';
 
 import '../../pub_server.dart';
+import '../exceptions.dart';
 
 // TODO: Move this to test once actual DB is implemented
 class FakeDatabase extends Database {
   @override
   Future<ListVersionModel> listPackageVersion(String package) async {
+    if (package != 'fake_package') {
+      throw NotFoundException('$package was not found');
+    }
     final data = await _readFile('list_package.json');
     return ListVersionModel.fromJson(data);
   }

@@ -81,6 +81,10 @@ class InvalidInputException extends ResponseException {
     }
   }
 
+  static void checkNotEmpty(dynamic value, String name) {
+    _check(value.toString().isNotEmpty, () => '"$name" cannot be empty');
+  }
+
   /// Throw [InvalidInputException] if [value] is not `null`.
   static void checkNull(dynamic value, String name) {
     _check(value == null, () => '"$name" must be `null`');

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
-import 'package:pub_server/src/models/version_model.dart';
+import 'version_model.dart';
 
 class ListVersionModel {
   final String name;
@@ -47,7 +47,7 @@ class ListVersionModel {
     );
   }
 
-  String toJson() => json.encode(toMap());
+  List<int> toJson() => json.fuse(utf8).encode(toMap());
 
   factory ListVersionModel.fromJson(String source) =>
       ListVersionModel.fromMap(json.decode(source));

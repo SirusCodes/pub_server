@@ -41,7 +41,7 @@ class VersionModel {
     );
   }
 
-  String toJson() => json.encode(toMap());
+  List<int> toJson() => json.fuse(utf8).encode(toMap());
 
   factory VersionModel.fromJson(String source) =>
       VersionModel.fromMap(json.decode(source));
