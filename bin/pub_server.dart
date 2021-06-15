@@ -11,7 +11,7 @@ Future<void> main(List<String> arguments) async {
   final router = Router();
 
   // TODO: Remove this once actual DB is implemented
-  final fakedb = FakeDatabase();
+  final fakedb = FakeDatabase.instance;
 
   router.mount('/api/packages/', FetchPackages(fakedb).router);
 

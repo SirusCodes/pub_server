@@ -20,7 +20,7 @@ void main() {
   setUp(() async {
     final router = Router();
 
-    final fakedb = FakeDatabase();
+    final fakedb = FakeDatabase.instance;
 
     router.mount('$_path/', FetchPackages(fakedb).router);
 

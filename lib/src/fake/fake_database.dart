@@ -5,6 +5,14 @@ import '../exceptions.dart';
 
 // TODO: Move this to test once actual DB is implemented
 class FakeDatabase extends Database {
+  static FakeDatabase? _instance;
+  FakeDatabase._();
+
+  static FakeDatabase get instance {
+    _instance ??= FakeDatabase._();
+    return _instance!;
+  }
+
   @override
   Future<ListVersionModel> listPackageVersion(String package) async {
     if (package != 'fake_package') {
